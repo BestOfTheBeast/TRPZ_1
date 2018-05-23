@@ -21,7 +21,7 @@ namespace TRPZ_1
                     {
                         min = array[j + i + 1];
                         x = i + j + 1;
-                    }
+                    }   
                 }
 
                 y = array[i];
