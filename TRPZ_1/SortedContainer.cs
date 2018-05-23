@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TRPZ_1
 {
-    public class SortetContainer
+    public class SortedContainer
     {
         public static int[] ShakerSort(int[] arr)
         {
