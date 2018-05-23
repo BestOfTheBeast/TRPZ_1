@@ -6,37 +6,29 @@ using System.Threading.Tasks;
 
 namespace TRPZ_1
 {
-    public class SortetContainer
+    public class SortedContainer
     {
-        public static int[] ShakerSort(int[] arr)
+        public static int[] SortArray(int[] array)
         {
-            int temp;
-            int left = 0;
-            int right = arr.Length - 1;
-            do
+            int min, x, y = 0;
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int i = left; i < right; i++)
+                min = array[i];
+                x = i;
+                for (int j = 0; j < array.Length - i - 1; j++)
                 {
-                    if (arr[i] > arr[i+1])
+                    if (min > array[j + i + 1])
                     {
-                        temp = arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = temp;
+                        min = array[j + i + 1];
+                        x = i + j + 1;
                     }
                 }
-                right--;
-                for (int i = right; i > left; i--)
-                {
-                    if (arr[i] < arr[i - 1])
-                    {
-                        temp = arr[i];
-                        arr[i] = arr[i - 1];
-                        arr[i - 1] = temp;
-                    }
-                }
-                left++;
-            } while (left < right);
-            return arr;
+
+                y = array[i];
+                array[i] = min;
+                array[x] = y;
+            }
+            return array;
         }
     }
 }
